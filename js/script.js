@@ -27,7 +27,12 @@ buttonPalindromeEl.addEventListener("click" , function(){
     // stringa = il valore dell'input.
     stringa = document.getElementById("palindrome-input").value;
 
-    palindromeWord(stringa);
+    if( stringa == " " || stringa.trim() === ""){
+        resulTextEl.innerText = "inserisci una parola";
+    }else{
+        palindromeWord(stringa);
+    }
+
 })
 
 
@@ -37,6 +42,7 @@ buttonPalindromeEl.addEventListener("click" , function(){
 
 // -crere funzione riconoscimentoParola(stringa)
 function palindromeWord(stringa){
+    
     // creare varibile stringaInvertita = convertire stringa in arrey di caratteri(.split)invertirlo(.reverse) e riunirlo in una stringa.
     let stringaInvertita =  stringa.split("").reverse().join("");
 

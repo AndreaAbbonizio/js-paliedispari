@@ -1,0 +1,25 @@
+.conatiner-exercise{
+    padding: 10px;
+    background-color: #6e6b6bb8;
+    border-radius: 16px;
+
+}
+
+
+#result-text{
+    margin-top: 10px;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 8px;
+}
+
+
+#number-result{
+    margin-top: 10px;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 8px;
+}
+
