@@ -132,12 +132,10 @@ buttonNumberEl.addEventListener("click", function(){
     let sum = parseInt(numberUser) + parseInt(numberComputer);
 
     console.log(sum);
-    if( isNaN(sum)){
-        numberResultEl.innerText = "inserisci un numero";
-    }else if(numberUser > 5){
-        numberResultEl.innerText = "hai inserito un numero maggiore di 5";
+    if( isNaN(sum) || numberUser > 5 || numberUser < 1 ){
+        numberResultEl.innerText = "Inserisci un numero tra 1 e 5";
     }else{
-        numberResultEl.innerText = "hai inserito " + numberUser + ", il computer ha inserito " + numberComputer + " hai scelto " + isEvenOrOdd + ", la somma " + evenOrOdd(sum);
+        numberResultEl.innerText = "hai inserito " + numberUser + ", il computer ha inserito " + numberComputer + ", hai scelto " + isEvenOrOdd + ", la somma " + evenOrOdd(sum);
     }
 })
 
