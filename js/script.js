@@ -50,3 +50,88 @@ function palindromeWord(stringa){
 
     }
 }
+
+
+
+
+//----------------------//// EX 1---------------------------------------------- //
+
+
+
+
+
+//-----------------------  EX2  ---------------------------------------------- //
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+// Sommiamo i due numeri
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+// Dichiariamo chi ha vinto.
+
+
+/*
+-Creaimo una variabile per il bottone dl numero utente
+-Creiamo variabile del numeroUtente
+-AL click del bottone 
+    -numeroUtente = valore dl numero scritto nell'input
+-creiamo funzione che riporti un numero random  per il computer e salviamo in una variabile
+-creiamo variabile somma e sommiamo le due variabili
+?SE (somma è un numero pari)
+    °mostrare in pagina stringa numero pari e la somma dei due numeri
+:ATRIMENTI
+    °mostrare in pagina stringa numero dispari e la somma dei due numeri
+*/
+
+// Creaimo una variabile per il bottone dl numero utente
+const buttonNumberEl = document.getElementById("button-number");
+
+const numberResultEl = document.getElementById("number-result");
+
+// Creiamo variabile del numeroUtente
+
+let numberUser;
+
+
+
+buttonNumberEl.addEventListener("click", function(){
+    
+    // numeroUtente = valore dl numero scritto nell'input
+    numberUser = document.getElementById("input-number").value;
+
+    
+    // creiamo funzione che riporti un numero random  per il computer e salviamo in una variabile
+    let numberComputer = randomNumberBetween(1, 5);
+
+    console.log(numberComputer);
+
+    let sum = parseInt(numberUser) + parseInt(numberComputer);
+
+    console.log(sum);
+    if( isNaN(sum)){
+        numberResultEl.innerText = "inserisci un numero";
+    }else if(numberUser > 5){
+        numberResultEl.innerText = "hai inserito un numero maggiore di 5";
+    }else{
+        numberResultEl.innerText = "hai inserito " + numberUser + ", il computer ha inserito " + numberComputer + ", la somma " + evenOrOdd(sum);
+    }
+})
+
+
+
+function randomNumberBetween(min, max) {
+
+    // genero un numero random
+    let random = Math.floor(Math.random() * (max - min + 1) + min)
+  
+    // una volta che la nostra funzione viene eseguita, restituisci al suo posto questo valore
+    return random;
+
+  
+}
+
+function evenOrOdd(number){
+    if(number % 2 == 0){
+        return "è pari";
+    }else{
+        return "è dispari";
+    }
+}
