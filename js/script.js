@@ -92,6 +92,27 @@ const buttonNumberEl = document.getElementById("button-number");
 
 const numberResultEl = document.getElementById("number-result");
 
+const oddButtonEl = document.getElementById("odd-button");
+
+const evenButtonEl = document.getElementById("even-button");
+
+let textEvenOddEl = document.getElementById("text-even-odd")
+
+let isEvenOrOdd ;
+
+oddButtonEl.addEventListener("click", function(){
+    textEvenOddEl.innerText = "hai scelto pari";
+    isEvenOrOdd = "pari"
+})
+
+
+evenButtonEl.addEventListener("click", function(){
+    textEvenOddEl.innerText = "hai scelto dispari";
+    isEvenOrOdd = "dispari"
+})
+
+
+
 // Creiamo variabile del numeroUtente
 
 let numberUser;
@@ -102,7 +123,6 @@ buttonNumberEl.addEventListener("click", function(){
     
     // numeroUtente = valore dl numero scritto nell'input
     numberUser = document.getElementById("input-number").value;
-
     
     // creiamo funzione che riporti un numero random  per il computer e salviamo in una variabile
     let numberComputer = randomNumberBetween(1, 5);
@@ -117,7 +137,7 @@ buttonNumberEl.addEventListener("click", function(){
     }else if(numberUser > 5){
         numberResultEl.innerText = "hai inserito un numero maggiore di 5";
     }else{
-        numberResultEl.innerText = "hai inserito " + numberUser + ", il computer ha inserito " + numberComputer + ", la somma " + evenOrOdd(sum);
+        numberResultEl.innerText = "hai inserito " + numberUser + ", il computer ha inserito " + numberComputer + " hai scelto " + isEvenOrOdd + ", la somma " + evenOrOdd(sum);
     }
 })
 

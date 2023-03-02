@@ -1,8 +1,23 @@
+.container{
+    background-color: #b5d2eb;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
 .conatiner-exercise{
     padding: 10px;
     background-color: #6e6b6bb8;
     border-radius: 16px;
 
+}
+
+#text-even-odd{
+    margin-top: 10px;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 8px;
 }
 
 
