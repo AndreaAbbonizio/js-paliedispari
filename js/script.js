@@ -25,12 +25,12 @@ const resulTextEl = document.getElementById("result-text");
 
 buttonPalindromeEl.addEventListener("click" , function(){
     // stringa = il valore dell'input.
-    stringa = document.getElementById("palindrome-input").value;
+    let stringa = document.getElementById("palindrome-input").value;
 
     if( stringa == " " || stringa.trim() === ""){
         resulTextEl.innerText = "inserisci una parola";
     }else{
-        palindromeWord(stringa);
+        resulTextEl.innerText = palindromeWord(stringa);
     }
 
 })
@@ -41,18 +41,18 @@ buttonPalindromeEl.addEventListener("click" , function(){
 
 
 // -crere funzione riconoscimentoParola(stringa)
-function palindromeWord(stringa){
+function palindromeWord(word){
     
-    // creare varibile stringaInvertita = convertire stringa in arrey di caratteri(.split)invertirlo(.reverse) e riunirlo in una stringa.
-    let stringaInvertita =  stringa.split("").reverse().join("");
+    // creare varibile wordInvertita = convertire word in arrey di caratteri(.split)invertirlo(.reverse) e riunirlo in una stringa.
+    let stringaInvertita =  word.split("").reverse().join("");
 
     // Se (stringa === stringaInvertita)
-    if(stringa === stringaInvertita){
+    if(word === stringaInvertita){
         // mostrare in pagina parola palindroma
-        resulTextEl.innerText = `Hai inserito ${stringa} ed è una parola  palindroma`;
+        return `Hai inserito  ${word} ed è una parola  palindroma`;
     }else{
         // Scrivere in pagina il risultato ( parola non palindroma).
-        resulTextEl.innerText = `${stringa} non è una parola  palindroma`;
+        return `${word} non è una parola  palindroma`;
 
     }
 }
